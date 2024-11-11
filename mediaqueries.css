@@ -1,0 +1,360 @@
+/* Media Queries */
+
+/* Screen width max 1400px */
+@media screen and (max-width: 1400px) {
+    #profile {
+      height: 83vh;
+      margin-bottom: 2rem;
+    }
+    #contact,
+    #projects {
+      height: fit-content;
+      margin-top: 2rem;
+    }
+    .section-container {
+      flex-wrap: wrap;
+      height: auto; /* Adjust for each section's content */
+      margin-top: 0; /* Remove any extra top margin */
+    }
+    #about-me {
+      height: auto; /* Adjust height based on content */
+      padding-bottom: 2rem; /* Add some padding for spacing */
+      margin-top: 0; /* Ensure no top margin */
+      overflow: hidden; /* Prevent overflow */
+    }
+    #experience {
+      margin-top: 4rem; /* Add margin to avoid overlapping */
+    }
+  
+  }
+  
+  /* Screen width max 1200px */
+  @media screen and (max-width: 1200px) {
+    #desktop-nav {
+      display: none;
+    }
+    #mobile-nav {
+      display: flex;
+    }
+    #profile {
+      display: flex;
+      justify-content: center;      /* Center horizontally */
+      align-items: center;          /* Center vertically */
+      height: 100vh;    
+      margin-bottom: 2rem; /* Add margin to the bottom */
+    }
+    #about-me {
+      padding-top: 1rem; /* Add some padding for spacing */
+      margin-top: 0; /* Ensure no top margin */
+    }
+    #profile,
+    .section-container {
+      flex-wrap: wrap;
+      margin-bottom: 2rem; /* Add margin to the bottom */
+    }
+    .arrow, 
+    .arrow-up {
+      display: none;
+    }
+    section,
+    .section-container {
+      height: fit-content;
+    }
+    section {
+      margin: 0 5%;
+      margin-bottom: 2rem; /* Added bottom margin to sections */
+    }
+    .section-pic-container {
+      width: 275px;
+      height: 275px;
+      margin: 0 auto 2rem;
+    }
+    .section-container {
+      margin-top: 0;
+    }
+    .text-container {
+      text-align: center;
+      margin: 0 auto;
+      transform: translateY(-10%); /* Adjust upward by 10%. You can change this value to control the position */
+    }
+    .text-container h1{
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    .text-container .text_container_profile_p1{
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .text-container .text_container_profile_p2{
+        text-align: center;
+        font-size: 1.2rem;
+  }
+  }
+  
+  /* Screen width max 1024px */
+  @media (max-width: 1024px) {
+    #experience {
+      padding: 2rem 0;
+      height: auto; /* Allows content to control height */
+      margin-top: 3rem; /* Slightly adjusted margin for spacing */
+    }
+    article {
+      width: calc(50% - 1rem); /* Two articles per row */
+    }
+    .experience_sub_title_frontend,
+    .experience_sub_title_backend {
+      font-size: 1.8rem; /* Slightly smaller font size */
+    }
+    .color-container {
+      width: calc(50% - 1rem); /* Two items per row on medium screens */
+    }
+  }
+  
+  /* Screen width max 768px */
+  @media (max-width: 768px) {
+    #about-me {
+      height: auto;
+      margin-top: 0; /* Ensure no top margin */
+      padding: 30px 15px; /* Adjust padding for smaller screens */ /* Adjusted for smaller gap, keep this if necessary */
+    }
+    .section_title {
+      font-size: 1.8rem;
+      margin-bottom: 20px; /* Reduced space below the title */
+    }
+    #experience {
+      margin-top: 3rem;
+    }
+    .section-container {
+      flex-direction: column; /* Stack image and text vertically */
+      gap: 1px; /* Reduced gap between image and text */
+      margin-top: 20px;
+    }
+    #contact {
+      height: auto; /* Allow contact section to adjust based on content */
+      padding-bottom: 2rem; /* Padding for spacing */
+    }
+    #about-me .about-me-pic {
+      width: 230px;
+      margin-bottom: 15px; 
+    }
+    .section-pic-container, .about-me-text-container {
+      max-width: 100%; /* Allow full width on small screens */
+    }
+    .about-me-text-container {
+      padding: 0 10px; /* Adjust padding for smaller screens */
+      font-size: 1rem; /* Slightly smaller text for mobile */
+      margin-top: 7px; /* Adjust space below text */
+    }
+    .about-me-text-container p {
+      font-size: 1.5rem;
+      padding: 0 10px;
+      margin-bottom: 1.5rem; /* Adjust paragraph spacing on mobile */
+      text-align: justify;
+    }
+    footer .mobile-nav-container {
+      display: flex; /* Show navigation links only on mobile */
+      justify-content: center;
+    }
+    article {
+      width: 100%; /* Stack articles vertically */
+      max-width: none;
+    }
+    .section_title {
+      font-size: 2.4rem; /* Adjusted title size for smaller screens */
+    }
+    .experience_sub_title_frontend,
+    .experience_sub_title_backend {
+      font-size: 1.6rem; /* Adjusted subtitle size */
+      text-align: center; /* Center align */
+    }
+    article h3 {
+      font-size: 1.3rem; /* Smaller heading size */
+    }
+    article p {
+      font-size: 1rem; /* Smaller paragraph size */
+    }
+    #projects {
+      padding: 30px 10px;
+    }
+    .section_title {
+      font-size: 1.8rem;
+      margin-bottom: 20px; /* Reduced space below the title */
+    }
+    .projects-details-container {
+      flex-direction: column; /* Stack projects vertically on small screens */
+      align-items: center; /* Center align */
+      gap: 20px; /* Reduced gap between containers */
+      margin-top: 35px; /* Adjusted margin */
+    }
+    .color-container {
+      max-width: 400%; /* Allow full width on smaller screens */
+    }
+    #contact {
+      height: auto; /* Allow contact section to adjust based on content */
+      padding-bottom: 2rem;
+    }
+    form {
+      width: 100%;
+    }
+    .logo img {
+      width: 200px; /* Decrease the logo size on smaller screens */
+    }
+    .logo {
+     padding: 8px; /* Reduce padding for smaller devices */
+      margin-right: 5rem; 
+      box-sizing: border-box;
+    }
+    .nav-links {
+      margin-right: auto; /* Push the logo to the left */
+    }
+    .text-container {
+      text-align: justify;
+      margin: 0 auto;
+      transform: translateY(-20%); /* Adjust upward by 20%. Change this value as needed. */
+    }
+    .color-container {
+      width: 100%; /* One item per row on small screens */
+    }
+  }
+  
+  /* Screen width max 600px */
+  @media (max-width: 600px) {
+    #contact{
+      height: auto;
+    }
+    .text_container_profile_p1 {
+      font-size: 1.25rem;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      margin-right: auto;
+    }
+    #contact,
+    footer {
+      height: auto; /* Allow footer to adjust based on content */
+      margin-top: 2rem; /* Added margin for spacing */
+    }
+    #profile {
+      height: 83vh;
+      margin-bottom: 0;
+    }
+    article {
+      font-size: 1rem;
+    }
+    footer nav {
+      height: fit-content;
+      margin-bottom: 2rem;
+    }
+    .about-me-container,
+    .container,
+    .btn-container {
+      flex-wrap: wrap;
+    }
+    .container {
+      margin: 0;
+    }
+    .logo {
+      font-size: 2rem;
+    }
+    .title {
+      font-size: 2rem;
+    }
+    .text-container {
+      text-align: justify;
+      margin: 0 auto;
+      transform: translateY(-20%); /* Adjust upward by 20%. Change this value as needed. */
+    }
+    footer {
+      padding: 1rem; /* Adjust padding for smaller screens */
+    }
+    .footer-nav-links {
+      flex-direction: column; /* Stack links vertically */
+      gap: 0.5rem; /* Adjust spacing between links */
+    }
+    .footer-nav-links a {
+      font-size: 1.2rem; /* Increase font size for better readability */
+      color: seashell;
+    }
+    .footer-nav-links a:hover {
+      color: seashell;
+    }
+    footer p {
+      font-size: 14px;
+      color: rgb(0, 0, 0);
+    }
+    footer .nav-links li {
+      margin: 0 5px;
+    }
+    .color-container {
+      width: 80%; /* Two cards per row with some gap */
+      max-width: none; /* Remove max-width restriction */
+      margin-bottom: 1.5rem; /* Space between project cards */
+    }
+    .projects-details-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    button {
+      font-size: 16px; /* Further reduce font size for mobile */
+      padding: 0.4em 0.8em; /* Further reduce padding */
+      border-radius: 18px; /* Adjust border radius */
+    }
+  
+    button .svg-wrapper {
+      width: 26px; /* Reduce size of the icon wrapper */
+      height: 26px;
+    }
+  
+    button svg {
+      width: 15px; /* Adjust icon size */
+      height: 15px;
+    }
+  }
+  
+  /* Screen width max 480px */
+  @media (max-width: 480px) {
+    .section_title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .projects-details-container {
+      gap: 15px; /* Smaller gap between project containers */
+    }
+  
+    .color-container {
+      max-width: 250px; /* Even smaller container width */
+      padding: 18px;
+    }
+    .arrow {
+      display: none; /* Hides arrows on very small screens */
+    }
+    .about-me-pic {
+      width: 100px;
+    }
+    .about-me-text-container p {
+      font-size: 0.85rem;
+    }
+    .arrow,
+    .arrow-up {
+      width: 20px;
+    }
+    #experience {
+      padding: 1rem 0; /* Reduced padding on very small screens */
+      margin-top: 2rem; /* Adjusted margin to reduce gap */
+    }
+    article {
+      padding: 0.5rem; /* Reduced padding for articles */
+    }
+    article h3 {
+      font-size: 1.2rem; /* Further reduction in heading size */
+    }
+    article p {
+      font-size: 0.95rem; /* Further reduction in paragraph size */
+    }
+    .arrow {
+      margin-top: 1.5rem; /* Reduced space for the arrow */
+    }
+  }

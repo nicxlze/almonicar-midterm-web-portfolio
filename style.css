@@ -1,0 +1,977 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
+
+/*GENERAL STYLES*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #f0f0f0;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    color: rgb(85, 85, 85);
+  }
+
+/* TRANSITION */
+
+a, .btn {
+  transition: all 300ms ease;
+}
+
+/* Background applied to wrapper */
+.background {
+  background-image: url('blue-green-gradient.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Reset background on individual sections */
+#profile, #about-me, #experience, #projects, #contact, footer {
+  background: none; /* Remove individual background */
+}
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 30vh); /* Adjust height as needed */
+  padding-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* DESKTOP NAV */
+
+nav,
+.desktop-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+.desktop-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.desktop-links a {
+  color: whitesmoke;
+  text-decoration: none;
+  text-decoration-color: #f0f0f0;
+  position: relative;
+  transition: all 300ms ease;
+}
+
+/* Updated Hover Effect for Links */
+.desktop-links:hover li a {
+  transform: scale(1.1);  /* Slight scale for non-hovered links */
+  opacity: 0.5;           /* Make them slightly transparent */
+  filter: blur(1px);
+  color: #000000;      /* Subtle blur for non-hovered links */
+}
+
+.desktop-links li a:hover {
+  transform: scale(1.2);  /* Slightly larger scale on hovered link */
+  opacity: 1;             /* Fully visible */
+  filter: blur(0);        /* Remove blur on hovered link */
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* Background Hover Effect */
+.desktop-links li a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: transform 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+.desktop-links li a:hover:before {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.logo {
+  margin-right: 8rem; /* Push the logo to the left */
+}
+
+.logo img {
+  width: 250px; /* Adjust the size as needed */
+  height: auto; /* Keeps the image's aspect ratio */
+}
+
+.logo img:hover {
+  cursor: pointer; /* Change this if you want different behavior on hover */
+}
+
+
+  .nav-links, .desktop-links {
+    font-family: "Inter", sans-serif;
+}
+
+/* MOBILE NAV */
+
+#mobile-nav { /* Hide the mobile nav in the desktop nav */
+  display: none;
+  position: relative; 
+  justify-content: space-between; /* Space between logo and nav-icon */
+  align-items: center; /* Center vertically */
+
+}
+
+.nav-icon-6 {
+  width: 35px;
+  height: 30px;
+  margin-right: 20px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Ensure icon stays above nav-links */
+  margin-right: 4rem;
+}
+
+.nav-icon-6 span {
+  background-color: white;
+  position: absolute;
+  border-radius: 2px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  width: 100%;
+  height: 4px;
+}
+
+.nav-icon-6 span:nth-child(1) { top: 0px; }
+.nav-icon-6 span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-icon-6 span:nth-child(3) { bottom: 0px; }
+
+/* Hover effects */
+.nav-icon-6:not(.open):hover span:nth-child(1),
+.nav-icon-6:not(.open):hover span:nth-child(3) {
+  transform: scaleY(1.2);
+}
+
+.nav-icon-6.open span:nth-child(1) {
+  transform: rotate(45deg) scaleX(0.7);
+  top: 50%;
+  left: -8px;
+}
+
+.nav-icon-6.open span:nth-child(2) {
+  transform: scale(0);
+}
+
+.nav-icon-6.open span:nth-child(3) {
+  transform: rotate(-45deg) scaleX(0.7);
+  top: 50%;
+  left: 7px;
+}
+
+/* Nav-links (Dropdown) */
+.nav-links {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100px; /* Adjusted to avoid covering icon */
+  right: 10px; /* Adjust for right alignment */
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  list-style: none;
+  z-index: 5; /* Lower z-index than .nav-icon-6 */
+}
+
+.nav-links.open {
+  display: block; /* Show when the .open class is added */
+}
+
+.nav-links li {
+  padding: 10px 0;
+}
+
+.nav-links li a {
+  color: #000; /* Link color */
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Make sure the dropdown doesn't affect the layout when hidden */
+.nav-links li a:hover {
+  color: #007bff; /* Optional: Add hover effect for links */
+}
+
+/* SECTION */
+
+section{
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+
+}
+
+/* PROFILE SECTION */
+
+#profile {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Aligns items vertically */
+  gap: 5rem;
+  height: 80vh;
+}
+
+.text-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem; /* Reduced margin for better spacing */
+  text-align: center; /* Centers the heading */
+  background-image: linear-gradient(
+    -225deg,
+    #b3cde0 0%,   /* Light blue */
+    #cce6ff 29%,  /* Lighter blue */
+    #ff99cc 67%,  /* Soft pink */
+    #ffffcc 100%  /* Light yellow */
+  );
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem; /* Reduced margin for better spacing */
+  color: white; /* Darker color for better readability */
+  text-align: center; /* Centers the heading */
+}
+
+.text_container_profile_p1 {
+  font-size: 1.50rem;
+  margin-bottom: 0.5rem; /* Reduced margin for better spacing */
+  color: whitesmoke; /* Slightly lighter color for contrast */
+  text-align: center; /* Centers the text */
+}
+
+.text_container_profile_p2 {
+  font-size: 1.55rem;
+  margin-bottom: 1rem;
+  color: whitesmoke;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* Style for the typewriter text */
+#typewriter {
+  font-weight: bold;
+  background: linear-gradient(90deg, white, lightgray);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Blinking cursor effect */
+#typewriter span {
+  border-right: 2px solid whitesmoke;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Cursor blink keyframes */
+@keyframes blink-caret {
+  from { border-color: whitesmoke; }
+  to { border-color: transparent; }
+}
+
+/* Fade-in effect for text */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.name {
+  font-size: 5rem;
+  text-align: center;
+}
+
+.btn-container {
+  margin-top: 1.5rem;
+}
+
+.contacts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* Space between icons */
+  margin-top: 1rem;
+}
+
+.contacts-container img {
+  width: 1.5rem; /* Adjust icon size */
+  height: auto;
+}
+
+#contacts-container a {
+  display: inline-block;
+}
+
+/* ICONS */
+.icon {
+  height: 2rem; /* Keeps icon ratio */
+  transition: transform 0.2s; /* Smooth hover effect */
+  margin: 0 10px; /* Add spacing between icons */
+}
+
+.icon:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+/* BUTTONS*/
+
+.btn-container {
+  display: flex;
+  justify-content: center; /* Adjust alignment as needed */
+}
+
+.btn.btn-color-2 {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+}
+
+.btn.btn-color-2:focus {
+  text-decoration: none;
+}
+
+.btn.btn-color-2:hover {
+  transform: translateY(-2px); /* Move the button up slightly */
+  box-shadow: #fff 6px 6px 0 0, #000 6px 6px 0 1px; /* Increase shadow effect */
+}
+
+.btn.btn-color-2:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+.btn.btn-color-2:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+/* ABOUT SECTION */
+
+#about-me {
+  position: relative;
+  padding: 4rem 2rem;
+}
+
+.about-me-container {
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#about-me .section_title, #experience .section_title, #projects .section_title, #contact .section_title {
+  color: whitesmoke; /* or your desired color */
+}
+
+#about-me .about-me-text-container p {
+  color: whitesmoke; /* or your desired color */
+}
+
+.section_title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: whitesmoke;
+  
+}
+
+.section-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.section-pic-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-me-pic {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-text-container {
+  flex: 1;
+  max-width: 600px;
+  padding: 1.5rem;
+}
+
+.about-me-text-container p {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: whitesmoke;
+  line-height: 1.5; /* Increased line height for better readability */
+  margin-bottom: 1.5rem; /* Increased spacing between paragraphs */
+  text-align: justify; /* Justify text for a clean look */
+}
+
+.arrow, .arrow-up {
+  position: absolute; /* Position relative to the section */
+  right: -5rem; /* Adjust this for your layout */
+  height: 40px; /* Ensure the height is consistent */
+  width: 40px; /* Ensure the width is consistent */
+  cursor: pointer;
+  background-size: contain; /* Ensure background fits within the size */
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.arrow {
+  bottom: 2.5rem; /* Specific positioning for the down arrow */
+}
+
+.arrow-up {
+  top: 2.5rem; /* Specific positioning for the up arrow */
+}
+
+/* Optional: Add hover effect */
+.arrow:hover, .arrow-up:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+/* Optional: Add hover effect */
+.arrow-up:hover {
+  transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+/* Ensure proper positioning for sections */
+section {
+  position: relative; /* Needed for absolute positioning of arrow */
+  padding: 0px; /* Add padding to avoid overlap with the arrow */
+}
+
+
+.details-container:first-of-type {
+  margin-bottom: 3rem; /* Adjust this value as needed */
+}
+
+/* EXPERIENCE SECTION */
+
+#experience {
+  position: relative;
+  padding: 4rem 0;
+}
+
+.section_title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.experience-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; /* Reduced gap between sections */
+}
+
+.details-container_frontend,
+.details-container_backend {
+  width: 90%;
+  max-width: 1200px;
+  text-align: left; /* Align text to the left */
+}
+
+.experience_sub_title_frontend,
+.experience_sub_title_backend {
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem; /* Reduced margin */
+}
+
+.article-container-frontend,
+.article-container-backend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Reduced gap between articles */
+  justify-content: flex-start; /* Align articles to the left */
+}
+
+article {
+  display: flex;
+  align-items: center; /* Align content vertically */
+  width: calc(33.333% - 1rem); /* Maintain three articles per row */
+  max-width: 350px;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+article:hover {
+  transform: translateY(-5px);
+}
+article .icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem; /* Added margin to separate icon from text */
+}
+
+article h3 {
+  font-size: 1.4rem; /* Adjusted heading size */
+  font-weight: 600;
+  margin: 0;
+}
+
+article p {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.arrow {
+  margin-top: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.arrow:hover {
+  transform: scale(1.1);
+}
+
+/* General styling for section */
+#projects {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Title styling */
+.section_title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Container for projects */
+.projects-details-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+/* Individual project container */
+.color-container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.color-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Project image styling */
+.project-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Spacing between image and text */
+}
+
+/* Project title styling */
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #004690bb; /* Accent color */
+}
+
+/* Project description styling */
+.project-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Button container and button styling */
+.btn-container {
+  margin-top: 10px;
+}
+
+.project-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.project-btn:hover {
+  background-color: #0056b3;
+}
+
+.arrow {
+  display: block;
+  margin: 3rem auto 0;
+  width: 50px;
+  cursor: pointer;
+  filter: invert(0);
+  transition: opacity 0.3s;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+
+
+/* CONTACT SECTION */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 20vh); /* Adjust height according to the footer size */
+  padding: 2rem 1rem; /* Add padding for spacing */
+  background-image: url('./assets/img/blue-green-gradient.png'); /* Ensure path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-bottom: 1rem;
+  font-family: "Inter", sans-serif;
+}
+
+/* Adjusting the contact details container */
+#contacts-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Align fields in a column */
+  margin-top: 1.5rem;
+  gap: 1.5rem; /* Space between form fields */
+}
+
+.section_title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 16px;
+  font-family: "Inter", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  max-width: 100%; /* Ensure form is responsive */
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+.field {
+  width: 100%;
+  margin-bottom: 1.5rem; /* Equal spacing for all fields */
+  font-family: "Inter", sans-serif;
+}
+
+label, input, textarea {
+  width: 100%;
+  padding: 8px;
+}
+
+label {
+  color: whitesmoke;
+}
+
+.field label {
+  display: flex;
+  align-items: center; /* Center the icon and text vertically */
+  color: whitesmoke;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 10px; /* Maintain the spacing between the icon and text */
+}
+
+.field:focus-within label {
+  color: #000;
+  letter-spacing: 2px;
+}
+
+input, textarea {
+  background: rgba(205, 205, 205, 0.722);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.8rem; /* Adjusted padding for a consistent appearance */
+}
+
+input:focus, textarea:focus {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: none;
+}
+
+textarea {
+  resize: none;
+  padding: 0.8rem; /* Consistent padding for textarea */
+  margin-bottom: 0; /* Remove margin below textarea */
+}
+
+button {
+  font-family: inherit;
+  font-size: 16px; /* Reduced font size */
+  background: linear-gradient(to bottom, #4dc7d9 0%, #66a6ff 100%);
+  color: white;
+  padding: 0.5em 1em; /* Reduced padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 20px; /* Slightly smaller border radius */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow size */
+  transition: all 0.3s;
+  margin-top: 0; /* Remove any margin above the button */
+}
+
+button:hover {
+  transform: translateY(-2px); /* Reduced hover effect */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Adjusted hover shadow */
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+button svg {
+  width: 16px; /* Reduced icon size */
+  height: 16px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px; /* Reduced icon wrapper size */
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+button:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover svg {
+  transform: rotate(45deg);
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 16px;
+  color: whitesmoke;
+}
+.social-media span {
+  margin-right: 10px; /* Spacing between the text and icons */
+  font-size: 1.2rem; /* Optional: adjust the font size of the text */
+}
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 10px;
+}
+
+.social-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 10px;
+}
+
+.social-media a {
+  color: #000;
+  font-size: 20px;
+  transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+.social-media a:hover {
+  transform: scale(1.1); /* Scale the icon on hover */
+}
+
+
+/* FOOTER SECTION */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 15vh;
+  margin: 0;
+  padding: 1rem 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.mobile-nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav-links {
+  display: flex;
+  gap: 1.5rem; /* Spacing between the list items */
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+}
+
+.footer-nav-links li {
+  font-size: 1.3rem; /* Set font size */
+}
+
+.footer-nav-links a {
+  color: rgba(0, 0, 0, 0.884); /* Link color */
+  text-decoration: none;
+  font-weight: 500; /* Medium weight for the links */
+  transition: color 0.3s ease;
+}
+
+.footer-nav-links a:hover {
+  color: rgb(0, 22, 186); /* Hover effect */
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+footer .nav-links li {
+  margin: 0.5rem 0; /* Space between links */
+}
+
+footer .nav-links a {
+  text-decoration: none;
+  color: #333; /* Dark color for links */
+  font-size: 16px;
+}
+
+
+footer p {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Portfolio</title>
+    <meta property="og:title" content="My Web Portfolio">
+    <meta property="og:description" content="Nicole Almonicar's portfolio showcasing projects, experience, and skills.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    
+</head>
+<body>
+
+
+<!-- DESKTOP NAV -->
+<main class="background">
+ <nav id="desktop-nav">
+  <div class="logo">
+    <img src="logo-icon.png" alt="Nicole Logo" />
+  </div>
+  
+    <div>
+      <ul class="desktop-links">
+        <li><a href="#profile">Home</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+  </nav>
+
+<!-- MOBILE NAV -->
+
+<nav id="mobile-nav">
+  <div class="logo">
+    <img src="logo-icon.png" alt="Nicole Almonicar" />
+  </div>
+  
+  <div class="mobile-nav-menu">
+    <div class="nav-icon-6" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
+    <div class="nav-links">
+      <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
+      <li><a href="#about-me" onclick="toggleMenu()">About Me</a></li>
+      <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </div>
+  </div>
+</nav>
+
+<!-- SECTION: Profile -->
+<section id="profile">
+  <div class="text-container">
+    <p class="text_container_profile_p1">Hello 👋, I'm</p>
+    <h1 class="name">Nicole Almonicar</h1>
+    <p class="text_container_profile_p2">
+      <span id="typewriter"></span>
+    </p>
+    
+    <div class="btn-container">
+      <button class="btn btn-color-2" onclick="window.open('Almonicar-Curriculum-Vitae.pdf')">Download CV</button>
+    </div>
+
+    <div class="contacts-container">
+      <a href="mailto:ma.nicolealmonicar@gmail.com">
+        <img src="gmail-icon.png" alt="Gmail" class="icon">
+      </a>
+      <a href="https://github.com/nicxlze">
+        <img src="github-icon.png" alt="GitHub" class="icon">
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION: About Me -->
+<section id="about-me">
+  <div class="about-me-container">
+    <h2 class="section_title">About Me</h2>
+  </div>
+  <div class="section-container">
+    <div class="section-pic-container">
+      <img
+        src="id-pic.png"
+        alt="Profile picture"
+        class="about-me-pic"
+      />
+    </div>
+    <div class="about-me-text-container">
+      <p>Hello! I'm Nicole Almonicar, a Computer Science student at Cavite State University - Bacoor City Campus with a passion for software development. My journey into tech began with a deep curiosity about computers, inspiring me to pursue a Computer Science degree and dive into the world of programming and software development.</p>
+      
+      <p>I’ve had hands-on experience working on both individual and collaborative projects, which has strengthened my skills in various programming languages and technologies, including HTML, CSS, PHP, SQL, and NoSQL. I’m eager to gain practical experience through internships and collaborative projects, where I can further apply and expand my skills.</p>
+      
+      <p>I’m also highly motivated to learn new tools and technologies that will help me grow into a well-rounded software developer. I look forward to connecting with goal-oriented professionals and contributing to innovative projects!</p>
+    </div>
+  </div>
+  <img
+    src="down-arrow.png"
+    alt="Arrow"
+    class="arrow"
+    onclick="location.href='./#experience'"
+  />
+  <img src="up-arrow.png" alt="Back to Profile" class="arrow-up" onclick="location.href='#profile'" />
+</section>
+
+
+
+<!-- SECTION: Experience -->
+<section id="experience">
+  <h2 class="section_title">Experience</h2>
+  <div class="experience-details-container">
+    <div class="details-container_frontend">
+      <h3 class="experience_sub_title_frontend">Frontend Development</h3>
+      <div class="article-container-frontend">
+        <article>
+          <img src="html.png" alt="HTML icon" class="icon" />
+          <div>
+            <h3>HTML</h3>
+            <p>Intermediate</p>
+          </div>
+        </article>
+        <article>
+          <img src="css-3.png" alt="CSS icon" class="icon" />
+          <div>
+            <h3>CSS</h3>
+            <p>Intermediate</p>
+          </div>
+        </article>
+        <article>
+          <img src="java-script.png" alt="JavaScript icon" class="icon" />
+          <div>
+            <h3>JavaScript</h3>
+            <p>Basic</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="details-container_backend">
+      <h3 class="experience_sub_title_backend">Backend Development</h3>
+      <div class="article-container-backend">
+        <article>
+          <img src="java.png" alt="Java icon" class="icon" />
+          <div>
+            <h3>Java</h3>
+            <p>Basic</p>
+          </div>
+        </article>
+        <article>
+          <img src="php.png" alt="PHP icon" class="icon" />
+          <div>
+            <h3>PHP</h3>
+            <p>Intermediate</p>
+          </div>
+        </article>
+        <article>
+          <img src="python.png" alt="Python icon" class="icon" />
+          <div>
+            <h3>Python</h3>
+            <p>Basic</p>
+          </div>
+        </article>
+        <article>
+          <img src="sql-server.png" alt="SQL icon" class="icon" />
+          <div>
+            <h3>SQL</h3>
+            <p>Basic</p>
+          </div>
+        </article>
+        <article>
+          <img src="database.png" alt="NoSQL icon" class="icon" />
+          <div>
+            <h3>NoSQL</h3>
+            <p>Basic</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <img src="up-arrow.png" alt="Back to About Me" class="arrow-up" onclick="location.href='#about-me'" />
+  <img src="down-arrow.png" alt="Arrow" class="arrow" onclick="location.href='./#projects'" />
+</section>
+
+<!-- SECTION: Projects -->
+
+<section id="projects">
+  <h2 class="section_title">Projects</h2>
+  <div class="projects-details-container">
+    <div class="color-container">
+      <div class="article-container">
+        <img src="checklist-of-courses.png" alt="Project 1" class="project-img" />
+      </div>
+      <h2 class="project-title">Checklist of Courses</h2>
+      <p class="project-description">
+        A simple project designed to store and manage checklist data. 
+        Developed using HTML, CSS, PHP, and SQL for efficient data management and storage.
+      </p>
+      <div class="btn-container">
+        <button class="project-btn" onclick="location.href='https://github.com/nicxlze/checklist-of-courses'">Github</button>
+      </div>
+    </div>
+
+    <div class="color-container">
+      <div class="article-container">
+        <img src="enrollment-system-shs.png" alt="Project 2" class="project-img" />
+      </div>
+      <h2 class="project-title">Enrollment System</h2>
+      <p class="project-description">
+        An online enrollment system designed to simplify the student registration process.
+        Features include strand selection and student data management.
+        Developed with HTML, CSS, PHP, and SQL database.
+      </p>
+      <div class="btn-container">
+        <button class="project-btn" onclick="location.href='https://github.com/nicxlze/shs-enrollment-system'">Github</button>
+      </div>
+    </div>
+
+    <div class="color-container">
+      <div class="article-container">
+        <img src="alumni-tracking.png" alt="Project 3" class="project-img" />
+      </div>
+      <h2 class="project-title">Alumni Tracking</h2>
+      <p class="project-description">
+        A simple platform for tracking alumni information and interactions with the institution. 
+        Allows easy access to alumni profiles and records.
+        Developed with HTML, CSS, PHP, and SQL for database management.
+      </p>
+      <div class="btn-container">
+        <button class="project-btn" onclick="location.href='https://github.com/nicxlze/alumni-tracking'">Github</button>
+      </div>
+    </div>
+  </div>
+  <img src="up-arrow.png" alt="Back to Experience" class="arrow-up" onclick="location.href='#experience'" />
+  <img src="down-arrow.png" alt="Arrow icon" class="arrow" onclick="location.href='./#contact'" />
+</section>
+
+
+<!-- SECTION: Contact Me -->
+
+<section id="contact">
+  <h2 class="section_title">Contact Me</h2>
+  <div class="container">
+    <form action="mailto:ma.nicolealmonicar@gmail.com" method="POST" enctype="text/plain">
+      <div class="field" tabindex="1">
+        <label for="username">
+          <img src="user-icon.png" alt="Name icon" class="icon" />Your Name
+        </label>
+        <input id="username" name="username" type="text" placeholder="e.g. John Doe" required />
+      </div>
+      <div class="field" tabindex="2">
+        <label for="email">
+          <img src="mail-icon.png" alt="Email icon" class="icon" />Your Email
+        </label>
+        <input id="email" name="email" type="email" placeholder="email@domain.com" required />
+      </div>
+      <div class="field" tabindex="3">
+        <label for="message">
+          <img src="mail-message-icon.png" alt="Message icon" class="icon" />Your Message
+        </label>
+        <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+      </div>
+      <button type="submit">
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+            </svg>
+          </div>
+        </div>
+        <span>Send</span>
+      </button>
+
+      
+      <div class="social-media">
+        <span>Get In Touch<i class="fas fa-long-arrow-alt-right"></i></span>
+        <a href="https://facebook.com/nicoleealmonicar" target="_blank">
+          <img src="facebook-icon.png" alt="Facebook" class="social-icon" />
+        </a>
+        <a href="https://instagram.com/nicxlze" target="_blank">
+          <img src="instagram-icon.png" alt="Instagram" class="social-icon" />
+        </a>
+        <a href="https://t.me/nicsilogggg" target="_blank">
+          <img src="telegram-icon.png" alt="Telegram" class="social-icon" />
+        </a>
+      </div>
+      
+    </form>
+    <img src="up-arrow.png" alt="Back to Projects" class="arrow-up" onclick="location.href='#projects'" />
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <nav>
+    <div class="mobile-nav-container">
+      <ul class="footer-nav-links">
+        <li><a href="#profile">Home</a></li>
+        <li><a href="#about-me">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <p> &#169; Nicole Almonicar 2024. All rights reserved.</p>
+</footer>
+</main>
+        <script src="script.js"></script> 
+  </body>
+  </html>
