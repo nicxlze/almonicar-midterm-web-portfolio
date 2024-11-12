@@ -219,21 +219,23 @@
   
   /* Screen width max 600px */
   @media (max-width: 600px) {
-    body, html {
-      height: 100%; /* Ensure no extra space is added outside the content */
-    }
     .section-container {
-      height: auto; /* Make sure sections adjust according to content */
-    }
+      margin-top: 0;
+    padding: 0; /* Remove unnecessary padding */
+  }
     #profile {
       height: auto; /* Adjust height based on content */
       margin-bottom: 0;
     }
     #about-me {
       height: auto; /* Adjust height to fit content */
+      padding: 0 10px; /* Adjust padding for smaller screens */
+      margin: 0; /* Remove any extra margin */
     }
     #contact {
       height: auto; /* Allow contact section to adjust */
+      padding: 0 10px; /* Adjust padding for smaller screens */
+      margin: 0; /* Remove any extra margin */
     }
     .text_container_profile_p1 {
       font-size: 1.25rem;
