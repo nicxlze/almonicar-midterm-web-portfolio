@@ -137,6 +137,13 @@
       width: 230px;
       margin-bottom: 15px; 
     }
+    .section-pic-container{
+      margin-bottom: 10px; /* Adjust this value to decrease space */
+    }
+    .about-me-text-container p {
+      font-size: 1rem; /* Slightly smaller text for mobile */
+      margin-bottom: 0; /* Adjust space below text */
+    }
     .section-pic-container, .about-me-text-container {
       max-width: 100%; /* Allow full width on small screens */
     }
