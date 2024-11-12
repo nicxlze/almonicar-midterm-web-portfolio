@@ -336,17 +336,6 @@
     }
   }
   
-  @media screen and (max-width: 576px) {
-    #profile {
-        margin-bottom: 5px;  /* Reduce the space between sections for mobile */
-        padding-bottom: 0;
-    }
-
-    #about-me {
-        margin-top: 5px;  /* Minimize top margin to reduce the gap */
-        padding-top: 0;
-    }
-}
   /* Screen width max 480px */
   @media (max-width: 480px) {
     .section_title {
