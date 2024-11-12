@@ -219,8 +219,21 @@
   
   /* Screen width max 600px */
   @media (max-width: 600px) {
-    #contact{
-      height: auto;
+    body, html {
+      height: 100%; /* Ensure no extra space is added outside the content */
+    }
+    .section-container {
+      height: auto; /* Make sure sections adjust according to content */
+    }
+    #profile {
+      height: auto; /* Adjust height based on content */
+      margin-bottom: 0;
+    }
+    #about-me {
+      height: auto; /* Adjust height to fit content */
+    }
+    #contact {
+      height: auto; /* Allow contact section to adjust */
     }
     .text_container_profile_p1 {
       font-size: 1.25rem;
