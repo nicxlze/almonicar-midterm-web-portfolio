@@ -31,7 +31,7 @@ a, .btn {
 
 /* Background applied to wrapper */
 .background {
-  background-image: url('blue-green-gradient.png'); 
+  background-image: url('blue-green-gradient-min.png'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
