@@ -7,7 +7,7 @@ function toggleMenu() {
   
   document.addEventListener('DOMContentLoaded', function(event) {
     // Array with texts to type in typewriter
-    var dataText = ["Computer Science Student", "Web Developer"];
+    var dataText = ["Computer Science Student", "Aspiring Web Developer"];
   
     // Typewriter function
     function typeWriter(text, i, fnCallback) {
